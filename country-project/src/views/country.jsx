@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Country() {
   const [inputName, setInputName] = useState("");
   const [countries, setCountries] = useState([]);
+  const navigate = useNavigate();
+
   const fetch = async () => {
     try {
       console.log(inputName);
@@ -36,6 +39,11 @@ export default function Country() {
     }
   }, [inputName]);
 
+  const handleNavigation = (e) => {
+    const country = e.target.innerText;
+    navigate(`/${country}`);
+  };
+
   return (
     <section className="flex flex-col gap-5 items-center justify-center min-h-screen text-4xl font-bold">
       <h1>COUNTRY</h1>
@@ -63,7 +71,11 @@ export default function Country() {
       <div className="w-1/2 text-lg">
         {countries.length > 0 &&
           countries.map((country, index) => (
-            <h2 className="hover:bg-slate-200 p-3 rounded-md" key={index}>
+            <h2
+              className="hover:bg-slate-200 p-3 rounded-md"
+              key={index}
+              onClick={handleNavigation}
+            >
               {country.name.common}
             </h2>
           ))}

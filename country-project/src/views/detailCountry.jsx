@@ -100,14 +100,14 @@ export default function DetailCountry() {
       </div>
 
       <div className="flex my-5 gap-5">
-        <div className="border-2 p-3 rounded-lg flex-col w-1/4 font-bold">
+        <div className="border-2 p-3 rounded-lg flex-col min-w-[25%] font-bold">
           <h2 className="text-xl ">LatLong</h2>
           <div className="my-3 flex flex-row text-6xl text-purple-500  gap-2">
             <h2>{country?.latlng[0]}.0,</h2>
             <h2>{country?.latlng[1]}.0</h2>
           </div>
         </div>
-        <div className="border-2 p-3 rounded-lg flex-col w-1/4">
+        <div className="border-2 p-3 rounded-lg flex-col min-w-[25%]">
           <h2 className="text-xl">
             Capital: <span className="font-bold">{country?.capital[0]}</span>
           </h2>
@@ -121,7 +121,7 @@ export default function DetailCountry() {
       </div>
 
       <div className="flex my-5 gap-5">
-        <div className="flex-col w-1/4 ">
+        <div className="flex-col min-w-[25%] ">
           <h2 className="text-xl font-bold">Calling Code</h2>
           <h2 className="text-6xl text-purple-500 font-bold">{callingCode}</h2>
           <h2 className="text-lg font-bold">
@@ -145,7 +145,7 @@ export default function DetailCountry() {
               })}
           </div>
         </div>
-        <div className="flex-col w-1/4 ">
+        <div className="flex-col min-w-[25%] ">
           <h2 className="text-xl font-bold">Currency</h2>
           <h2 className="text-6xl text-purple-500 font-bold">{currency}</h2>
           <h2 className="text-lg font-bold">
