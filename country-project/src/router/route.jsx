@@ -1,4 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
+import Country from "../views/country";
+import DetailCountry from "../views/detailCountry";
 
 const router = createBrowserRouter([
   {
@@ -6,6 +8,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Country />,
+      },
+      {
+        path: "/:countryName",
+        element: <DetailCountry />,
       },
     ],
   },
